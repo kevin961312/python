@@ -13,4 +13,3 @@ class SecretString():
 
 secret_string = SecretString("Acme: Top Secret","Jebus")
 print(secret_string.decrypt("Jebus"))
-print(secret_string.__plain_text)
