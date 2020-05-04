@@ -1,3 +1,4 @@
+import pygame
 class Settings():
     """A class to store all settings for Alien Invasion."""
     def __init__(self):
@@ -5,7 +6,10 @@ class Settings():
         # Screen settings
         self.screen_width = 1280
         self.screen_height = 680
-        self.bg_color = (226,216,255)
+        # Background
+        self.background = pygame.image.load('images/background_1.jpg')
+        #self.background = pygame.image.load('images/background_2.png')
+        self.bg_color = (0,0,0)
 
         # Ship settings
         self.ship_speed = 1.5
@@ -15,7 +19,7 @@ class Settings():
         self.bullet_speed= 1.5
         self.bullet_width = 4
         self.bullet_height = 16
-        self.bullet_color = (60,60,60)
+        self.bullet_color = (255,255,255)
         self.bullets_allowed = 5
 
         #Alien settings 
