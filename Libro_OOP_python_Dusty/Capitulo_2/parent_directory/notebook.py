@@ -3,7 +3,7 @@ import datetime
 #Store the next available id for all new notes
 last_id = 0
 
-class Note():
+class Note:
     '''Represent a note in the notebook. Match against a 
     string in searches and store tags for each note.'''
     def __init__(self, memo, tags = ''):
@@ -24,8 +24,8 @@ class Note():
         Search is case sensitive and matches both text and
         tags.'''
         return filter in self.memo or filter in self.tags
-
-class Notebook():
+        
+class Notebook:
     '''Represent a collection of notes that can be tagged,
     modified, and searched.'''
     def __init__(self):
@@ -34,11 +34,32 @@ class Notebook():
     
     def new_note(self, memo, tags = ''):
         '''Create a new note and add it to the list'''
-        self.notes.append(Note(memo,tags))
+        self.notes.append(Note(memo.lower(),tags.lower()))
 
     def modify_memo(self, note_id, memo):
         '''Find the note with the given id and change its
         memo to the given value.'''
+        note = self._find_note(note_id)
+        if note:
+            note.memo = memo
+            return True
+        return False
+
+    def modify_tags(self, note_id, tags):
+        '''Find the note with the give id and change its 
+        tags to the given value.'''
+        note_t = self._find_note(note_id)
+        if note_t:
+            note_t.tags = tags
+            return True
+        return False
+
+    def search(self, filter):
+        '''Find all notes that match the give filter string'''
+        return [note for note in self.notes if note.match(filter.lower())]
+
+    def _find_note(self, note_id):
         for note in self.notes:
-            if note.id == note_id:
-                self.memo = memo
+            if str(note.id) == str(note_id):
+                return note
+        return None
