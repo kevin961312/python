@@ -1,15 +1,16 @@
 import  pygame
 from pygame.sprite import Sprite
-
+#image = pygame.image.load('images/alien.png')
+image = pygame.image.load('images/alien_star.png')
+image = image.convert_alpha()
 class Alien(Sprite):
 
     def __init__(self,ai_game):
         super(Alien,self).__init__()
+        global image
         self.screen = ai_game.screen
         self.settings = ai_game.settings
         # Load the alien image and set its rect attribute.
-        #image = pygame.image.load('images/alien.png')
-        image = pygame.image.load('images/alien_star.png')
         self.image = pygame.transform.scale(image,(50,50))
         self.rect = self.image.get_rect()
         

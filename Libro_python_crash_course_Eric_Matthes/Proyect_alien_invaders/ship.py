@@ -1,14 +1,15 @@
 import pygame
-
+image = pygame.image.load('images/spaceship.png')
+image = image.convert_alpha()
 class Ship:
 
     def __init__(self, ai_game):
         """Initialize the ship and set its starting position."""
+        global image
         self.screen = ai_game.screen
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
         # Load the ship image and get its rect.
-        image = pygame.image.load('images/spaceship.png')
         self.image = pygame.transform.scale(image, (50, 50))
         self.rect  = self.image.get_rect()
 

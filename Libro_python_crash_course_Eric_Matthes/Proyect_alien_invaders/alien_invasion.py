@@ -1,7 +1,6 @@
 import sys
 from time import sleep
 import pygame
-import pygame.display
 import math
 from settings import Settings
 from game_stats import GameStats
@@ -10,13 +9,13 @@ from ship import Ship
 from bullet import Bullet
 from alien import Alien
 
-class AlienInvasion():
+class AlienInvasion:
     def __init__(self):
         """Initialize the game, and create game resources."""
         pygame.init()
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.screen_width, 
-                                               self.settings.screen_height), pygame.FULLSCREEN)
+                                               self.settings.screen_height))
         self.stats = GameStats(self)
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
@@ -99,8 +98,7 @@ class AlienInvasion():
 
         
     def _update_screen(self):
-        #Redraw the screen during each pass through the loop        
-        self.screen.fill(self.settings.bg_color)
+        #Redraw the screen during each pass through the loop  
         self.screen.blit(self.settings.background,(0,0))
         self.ship.blitme()
         for bullet in  self.bullets.sprites():
@@ -163,7 +161,7 @@ class AlienInvasion():
             self._create_fleet()
             self.ship.center_ship()
             #Pause
-            sleep(0.3)
+            sleep(0.5)
         else:
             self.stats.game_active = False
 
@@ -189,9 +187,6 @@ class AlienInvasion():
             self._create_fleet()
             self.ship.center_ship()
             
-
-
-
 if __name__ == '__main__':
     # Make a game instance, and run the game.
     ai = AlienInvasion()
