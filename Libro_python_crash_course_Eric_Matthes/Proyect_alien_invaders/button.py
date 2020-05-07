@@ -1,6 +1,6 @@
 import pygame.font
 image = pygame.image.load('images/button_play.png')
-image = image.convert_alpha()
+image = image.convert_alpha() # casa
 class Button:
     def __init__(self, ai_game):
         global image
