@@ -27,7 +27,7 @@ class Settings():
         # Scoring
         self.alien_points = 50
         # How quickly the game speeds up
-        self.speedup_scale = 1.03
+        self.speedup_scale = 1.05
         self.initialize_dinamyc_settings()
 
     def initialize_dinamyc_settings(self):
