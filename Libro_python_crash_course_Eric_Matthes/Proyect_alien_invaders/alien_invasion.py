@@ -24,10 +24,8 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion")
         self.aliens = pygame.sprite.Group()
         self._create_fleet()
-
         #Make the Play button.
         self.play_button = Button(self)
-
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -39,15 +37,12 @@ class AlienInvasion:
                 self._update_bullets()
                 self._update_aliens()
                 
-
-
     def _update_bullets(self):
         self.bullets.update()
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
         self._check_bullet_alien_collisions()
-
 
     def _check_bullet_alien_collisions(self):
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
@@ -101,9 +96,7 @@ class AlienInvasion:
         elif event.key == pygame.K_ESCAPE:
             pygame.quit()
             sys.exit()
-        
-
-            
+                    
     def _check_keyup_events(self, event):
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
@@ -231,10 +224,6 @@ class AlienInvasion:
         self.ship.center_ship()
         #Hide the mouse cursor
         pygame.mouse.set_visible(False)
-
-            
-
-
 
 if __name__ == '__main__':
     # Make a game instance, and run the game.

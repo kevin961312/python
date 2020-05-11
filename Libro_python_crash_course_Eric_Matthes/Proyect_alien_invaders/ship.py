@@ -16,14 +16,11 @@ class Ship(Sprite):
         self.scale_h = 50
         self.image = pygame.transform.scale(image, (self.scale_w, self.scale_h))
         self.rect  = self.image.get_rect()
-
         # Start each new ship at the bottom center of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
-
         # Store a decimal value for the ship's center.
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
-
         #Movement flag
         self.moving_right = False
         self.moving_left  = False

@@ -19,8 +19,6 @@ class Scoreboard:
         self.prep_level()
         self.prep_ships()
 
-
-
     def prep_score(self):
         """Turn the score into a rendered image."""
         rounded_score = round(self.stats.score, -1)
