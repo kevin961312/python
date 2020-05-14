@@ -15,7 +15,7 @@ class AdressHolder:
         self.code = code
 
 class Friend(Contacts, AdressHolder):
-    def __init__(self,name,email,phone,street, city, state, code):
+    def __init__(self,name='',email='',phone='',street='', city='', state='', code=''):
         Contacts.__init__(self, name, email)
         AdressHolder.__init__(self, street, city, state, code)
         self.phone = phone
@@ -34,7 +34,7 @@ class EmailableContact(Contacts,MailSender):
 
 
 contact = Contacts('Kevin Pineda','garfolks@gmail.com')
-friend = Friend('Kevin Sebastian', 'kevin961312@gmail.com',7763395)
+friend = Friend(name='Kevin Sebastian', email='kevin961312@gmail.com',phone ='7763395')
 supplier = Supplier('Kevin Sebastian', 'kevin961312@gmail.com')
 
 
