@@ -1,8 +1,7 @@
 class AudioFile:
     def __init__(self, filename):
         if not filename.endswith(self.ext):
-            raise Exception("Invalid file format")
-
+            raise Exception("Invalid file format.")
         self.filename = filename
 
 class MP3File(AudioFile):
@@ -28,3 +27,13 @@ not_an_mp3 = MP3File("myfile.ogg")
 ogg.play()
 mp3.play()
 not_an_mp3.play()
+
+#Duck typing.
+class Flacfile:
+    def __init__(self, filename):
+        if not filename.endswith(self.ext):
+            raise Exception("Inavlid file format")
+        self.filename = filename
+
+    def play(self):
+        print("Playing {} as wav".format(self.filename))
