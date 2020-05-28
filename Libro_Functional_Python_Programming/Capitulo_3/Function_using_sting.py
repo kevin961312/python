@@ -10,8 +10,7 @@ def clean_decimal(text):
 
 def replace(data, a, b):
     return data.replace(a,b)
-
-
+    
 replace = str.replace
 print(replace("$12.45","$",""))
 
@@ -19,3 +18,4 @@ def remove(str, chars):
     if chars: return remove(str.replace(chars[0],""),chars[1:])
     return str
     
+print(clean_decimal("mamamama$$$$$$$"))
