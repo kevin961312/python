@@ -37,9 +37,11 @@ with open("Capitulo_3/CSV/Anscombe.csv") as source:
     print(str(data[1])+'\n')
     print(str(data[2])+'\n')
     print(str(data[3])+'\n')
-    print(sample_I[0:5])
-
-
-
+    print(sample_I)
+    
+    for subset in sample_I,sample_II,sample_III,sample_IV:
+        mean = sum(float(pair.y) for pair in subset )/len(sample_I)
+        print (mean)
+        
 
 

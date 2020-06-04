@@ -10,4 +10,5 @@ for gen in [range(10),range(5)]:
         empty_list.append(num)
 
 print(empty_list)
+print(frozenset(range(10)))
     

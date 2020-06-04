@@ -9,7 +9,8 @@ print ('hello world')
 #División por cero.
 #x = 5/0 
 
-#Iteracion fuera de rango de la lista.
-
-lis = [1,2,3]
-print(lis[3])
+#Índice fuera de rango de la lista.
+lst = [1,2,3]
+print(lst[3])
+#elementos de diferente tipo, ejemplo: (list, int)
+print(lst+2)
