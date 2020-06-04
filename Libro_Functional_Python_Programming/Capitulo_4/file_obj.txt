@@ -1,0 +1,15 @@
+<Placemark><Point>
+<coordinates>-76.33029518659343,37.54901619777347,0</coordinates>
+</Point></Placemark>
+<Placemark><Point>
+<coordinates>-76.3302951865903234,37.54901619777347,0</coordinates>
+</Point></Placemark>
+<Placemark><Point>
+<coordinates>-76.330295182432349048,37.54901619777347,0</coordinates>
+</Point></Placemark>
+<Placemark><Point>
+<coordinates>-76.33029518659234,37.54901619777347,0</coordinates>
+</Point></Placemark>
+<Placemark><Point>
+<coordinates>-76.33029518659048,37.549324234241619777347,0</coordinates>
+</Point></Placemark>
