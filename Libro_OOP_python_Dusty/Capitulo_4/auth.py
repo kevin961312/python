@@ -41,6 +41,7 @@ class InvalidPassword(AuthException):
 
 class PermissionError(Exception):
     pass
+
 class NotLoggedInError(AuthException):
     pass
 

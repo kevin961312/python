@@ -1,7 +1,7 @@
 import csv
 from collections import namedtuple
 
-def  row_iter(source):
+def row_iter(source):
     return csv.reader(source, delimiter=",")
 
 def head_split(row_iter):

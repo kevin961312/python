@@ -17,3 +17,12 @@ def row_iter_kml(file_obj):
 with open("./Capitulo_4/file_obj.xml") as source:
     sources = source.read()    
     data = list(row_iter_kml(sources))
+
+def row_iter(source):
+    return csv.reader(source, delimiter=",")
+
+def pick_lan_lon(lon,lat,alt):
+    return lat, lon
+    
+def lat_lon_kml(row_iter):
+    return (pick_lat_lon(*row) for row in row_iter)
