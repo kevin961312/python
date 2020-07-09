@@ -1,16 +1,10 @@
-#Errores comunes.
-#Falta parentesis, print no es una sentecia en python 3
-#print es una función.
-#Bien
-print ('hello world')
-#Error
-#print 'hello world'
+import unittest
 
-#División por cero.
-#x = 5/0 
+class TestFunction(object):
+    def __init__ (self, M, func, solution):
+        self.M = M
+        self.func= func
+        self.solution = solution
 
-#Índice fuera de rango de la lista.
-lst = [1,2,3]
-print(lst[3])
-#elementos de diferente tipo, ejemplo: (list, int)
-print(lst+2)
+    def evaluation(self):
+        f

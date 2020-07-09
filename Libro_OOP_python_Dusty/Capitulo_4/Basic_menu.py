@@ -55,5 +55,24 @@ class Editor:
     def menu(self):
         try:
             answer = ""
-            while True:
-                print("")
+            active = True
+            while active:
+                print("""
+                Please enter a command:
+                \tlogin\tLogin
+                \ttest\tTest the program
+                \tchange\tChange the program
+                \tquit\tQuit
+                """)
+
+                answer = input("enter a command: ").lower()
+                try:
+                    func = self.menu_map[answer]
+                except KeyError:
+                    print("{} is not a valid option".format(answer))
+                else:
+                    func()
+        finally:
+            print("Thank you for testing the auth module")
+
+Editor().menu()   
